@@ -1,0 +1,24 @@
+{
+    "name": "zcy\/weather",
+    "description": "A Weather SDK",
+    "license": "MIT",
+    "require": {
+        "guzzlehttp/guzzle": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zcy\\Weather\\": "src"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "mockery/mockery": "^1.4"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zcy\\Weather\\ServiceProvider"
+            ]
+        }
+    }
+}
