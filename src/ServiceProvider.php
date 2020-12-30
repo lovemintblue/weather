@@ -3,7 +3,7 @@
 namespace Zcy\Weather;
 use Illuminate\Support\Facades\Log;
 
-class ServiceProvider \Illuminate\Support\ServiceProvider
+class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function register()
     {
@@ -18,4 +18,6 @@ class ServiceProvider \Illuminate\Support\ServiceProvider
     {
         return [Weather::class, 'weather'];
     }
+
+
 }
