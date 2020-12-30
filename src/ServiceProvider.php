@@ -1,14 +1,13 @@
 <?php
 
-
 namespace Zcy\Weather;
+use Illuminate\Support\Facades\Log;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class ServiceProvider \Illuminate\Support\ServiceProvider
 {
-    protected $defer = true;
-
     public function register()
     {
+        Log::info("天气服务注册");
         $this->app->singleton(Weather::class, function () {
             return new Weather(config('services.weather.key'));
         });
