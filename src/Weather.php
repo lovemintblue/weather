@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the zcysunshine/weather.
+ *
+ * (c) lovebintlove @ 2791548686@qq.com
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Zcy\Weather;
 
 use GuzzleHttp\Client;
@@ -29,9 +39,9 @@ class Weather
     {
         $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
 
-        if (!\in_array(\strtolower($format),['xml', 'json'])) {
-            echo "ok";
-            throw new InvalidArgumentException('Invalid response format' . $format);
+        if (!\in_array(\strtolower($format), ['xml', 'json'])) {
+            echo 'ok';
+            throw new InvalidArgumentException('Invalid response format'.$format);
         }
 
         if (!\in_array(\strtolower($type), ['base', 'all'])) {
@@ -42,7 +52,7 @@ class Weather
             'key' => $this->key,
             'city' => $city,
             'output' => $format,
-            'extensions' =>  $type,
+            'extensions' => $type,
         ]);
 
         try {
